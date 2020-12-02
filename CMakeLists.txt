@@ -19,3 +19,4 @@ endif()
 #-------------------------------------------------------------------------------
 add_subdirectory(aoc_common)
 add_subdirectory(day_01)
+add_subdirectory(day_02)

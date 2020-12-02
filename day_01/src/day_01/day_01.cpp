@@ -57,3 +57,32 @@ uint32_t day_01::part_two(std::vector<uint32_t> input, uint32_t target){
     }
     return 0;
 }
+
+std::vector<uint32_t> day_01::read_file(std::string fname){
+    std::string line{};
+    std::vector<uint32_t> buffer{};
+    std::ifstream ifs(fname);
+    while(std::getline(ifs, line)){
+        buffer.push_back(std::stoi(line));
+    }
+    return buffer;
+}
+
+std::ostream&
+day_01::operator<<(std::ostream& os,
+                  const std::vector<uint32_t>& file)
+{
+    uint8_t counter {};
+    os << "[";
+    for(const auto& n: file){
+        os << n;
+        if(n != *file.rbegin()){
+            os << ", ";
+        }
+        if(!(++counter%10)){
+            os << '\n';
+        }
+    }
+    os << "]\n";
+    return os;
+}

@@ -1,6 +1,6 @@
 # Advent of code 2020
 
-My attempt at completing [advent of code 2020](https://adventofcode.com/).
+My attempt at completing [advent of code 2020](https://adventofcode.com/) in C++!
 I will try to be descriptive in my solutions (check `src/day<xx>/day<xx>.cpp`)
 and include space/time complexity information if possible.
 
