@@ -8,6 +8,9 @@ and include space/time complexity information if possible.
 + Day 01 (12/01/2020)
     + Part 1: 2sum problem
     + Part 2: 3sum problem
++ Day 02 (12/02/2020)
+    + Part 1: Password validity count
+    + Part 2: Password validity count v2
 
 ## How to run
 If you're curious and want to run my solutions as is, you'll need CMake
@@ -16,5 +19,5 @@ If you're curious and want to run my solutions as is, you'll need CMake
 ```bash
 mkdir build
 cmake .. && make
-cd day<xx> && ./aoc
+cd day<xx> && ./aoc_day<xx>
 ```

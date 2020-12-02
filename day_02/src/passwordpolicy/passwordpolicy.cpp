@@ -1,5 +1,7 @@
 #include <passwordpolicy/passwordpolicy.h>
 
+// Constructors and getters, nothing fancy
+
 PasswordPolicy::PasswordPolicy(char l, uint32_t _a, uint32_t _b)
     : letter(l), a(_a), b(_b) {}
 
