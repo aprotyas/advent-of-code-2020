@@ -1,5 +1,7 @@
 #include <password/password.h>
 
+// Constructors and getters, nothing fancy
+
 Password::Password(std::string pw, PasswordPolicy p) : pass(pw), policy(p) {}
 
 Password::Password(Password &&p) : pass(p.pass), policy(p.policy) {}
