@@ -1,6 +1,8 @@
 #pragma once
-#include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
-namespace utils {}
+namespace utils {
+std::vector<std::string> read_file(std::string fname);
+} // namespace utils
