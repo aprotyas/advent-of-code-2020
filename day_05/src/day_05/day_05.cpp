@@ -3,20 +3,9 @@
 uint32_t ID(const Seat s) { return s.row * 8 + s.col; }
 
 Seat seat(const BoardingPass &bp) {
-    uint32_t row{coded_bin2dec(bp.substr(0, 7), 'F', 'B')};
-    uint32_t col{coded_bin2dec(bp.substr(7), 'L', 'R')};
+    uint32_t row{utils::bin2dec(bp.substr(0, 7), 'F', 'B')};
+    uint32_t col{utils::bin2dec(bp.substr(7), 'L', 'R')};
     return {row, col};
-}
-
-uint32_t coded_bin2dec(std::string code, char zero, char one) {
-    reverse(code.begin(), code.end());
-    uint32_t dec{};
-    for (size_t pos{}; pos < code.length(); pos++) {
-        if (code[pos] == one) {
-            dec += 1 << pos;
-        }
-    }
-    return dec;
 }
 
 namespace day_05 {

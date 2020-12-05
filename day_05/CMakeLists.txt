@@ -28,6 +28,7 @@ set_target_properties(day_05 PROPERTIES
 
 target_link_libraries(day_05
     PUBLIC
+    aoc_common
 )
 
 add_executable(aoc_day05

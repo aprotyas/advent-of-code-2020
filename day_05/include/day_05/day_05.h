@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <utils/utils.h>
 #include <vector>
 
 typedef std::string BoardingPass;
@@ -12,7 +13,6 @@ struct Seat {
 
 uint32_t ID(const Seat s);
 Seat seat(const BoardingPass &bp);
-uint32_t coded_bin2dec(std::string code, char zero, char one);
 
 namespace day_05 {
 uint32_t part_one(std::vector<BoardingPass> &in);
