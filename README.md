@@ -20,6 +20,9 @@ and include space/time complexity information if possible.
 + Day 05 (12/05/2020)
     + Part 1: Max seat ID
     + Part 2: What's my seat ID?
++ Day 06 (12/06/2020)
+    + Part 1: Find all unique answers
+    + Part 2: Find all common answers
 
 ## How to run
 If you're curious and want to run my solutions as is, you'll need CMake

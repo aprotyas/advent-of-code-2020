@@ -17,16 +17,17 @@ endif()
 #-------------------------------------------------------------------------------
 # Sources
 #-------------------------------------------------------------------------------
+
 if(NOT DEFINED SRC_DIR)
     message(STATUS "SRC_DIR not defined: setting to `src`")
     set(SRC_DIR "src")
 endif()
 
 macro(subdirlist RESULT)
-    file(GLOB CHILDREN RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/*")
+    file(GLOB CHILDREN RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/*")
     set(DIR_LIST "")
     foreach(CHILD ${CHILDREN})
-        if(IS_DIRECTORY "${CHILD}")
+        if(IS_DIRECTORY "${SRC_DIR}/${CHILD}")
             message(STATUS "Adding ${CHILD} to subdirectories")
             list(APPEND DIR_LIST "${CHILD}")
         endif()
@@ -37,5 +38,5 @@ endmacro()
 subdirlist(SUBDIRS)
 
 foreach(SUBDIR ${SUBDIRS})
-    add_subdirectory(${SUBDIR})
+    add_subdirectory("${SRC_DIR}/${SUBDIR}" ${SUBDIR})
 endforeach()

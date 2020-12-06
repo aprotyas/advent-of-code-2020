@@ -13,7 +13,7 @@ elif [[ argc -eq 1 ]]; then
     else
         exe="$day"
     fi
-    make -C build/src/day_${exe}
+    make -C build/day_${exe}
 else
     echo "Too many arguments!"
 fi
