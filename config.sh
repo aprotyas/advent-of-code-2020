@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cmake -S . -B build
+cmake -S . -B build -DSRC_DIR=src

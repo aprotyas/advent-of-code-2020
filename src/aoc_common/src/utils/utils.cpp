@@ -12,10 +12,9 @@ std::vector<std::string> read_file(std::string fname) {
 }
 
 uint32_t bin2dec(std::string code, char zero, char one) {
-    reverse(code.begin(), code.end());
-    uint32_t dec{};
-    for (size_t pos{}; pos < code.length(); pos++) {
-        if (code[pos] == one) {
+    uint32_t dec{0}, pos{0};
+    for (auto it{code.crbegin()}; it != code.crend(); it++, pos++) {
+        if (*it == one) {
             dec += 1 << pos;
         }
     }

@@ -17,9 +17,25 @@ endif()
 #-------------------------------------------------------------------------------
 # Sources
 #-------------------------------------------------------------------------------
-add_subdirectory(aoc_common)
-add_subdirectory(day_01)
-add_subdirectory(day_02)
-add_subdirectory(day_03)
-add_subdirectory(day_04)
-add_subdirectory(day_05)
+if(NOT DEFINED SRC_DIR)
+    message(STATUS "SRC_DIR not defined: setting to `src`")
+    set(SRC_DIR "src")
+endif()
+
+macro(subdirlist RESULT)
+    file(GLOB CHILDREN RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/*")
+    set(DIR_LIST "")
+    foreach(CHILD ${CHILDREN})
+        if(IS_DIRECTORY "${CHILD}")
+            message(STATUS "Adding ${CHILD} to subdirectories")
+            list(APPEND DIR_LIST "${CHILD}")
+        endif()
+    endforeach()
+    set(${RESULT} ${DIR_LIST})
+endmacro()
+
+subdirlist(SUBDIRS)
+
+foreach(SUBDIR ${SUBDIRS})
+    add_subdirectory(${SUBDIR})
+endforeach()

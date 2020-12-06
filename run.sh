@@ -10,9 +10,9 @@ if [[ numarg -eq 1 ]]; then
     else
         exe="$day"
     fi
-    cd build/day_${exe}
+    cd build/src/day_${exe}
     ./aoc_day${exe}
-    cd ../..
+    cd ../../..
 else
     echo "Too few/many arguments! Specify the day you want to run."
 fi
